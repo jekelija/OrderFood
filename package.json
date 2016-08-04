@@ -1,0 +1,28 @@
+{
+  "name": "orderfood",
+  "version": "1.0.0",
+  "description": "Helps people order food at my olympics party",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jekelija/OrderFood.git"
+  },
+  "keywords": [
+    "food"
+  ],
+  "author": "Jon Jekeli",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/jekelija/OrderFood/issues"
+  },
+  "homepage": "https://github.com/jekelija/OrderFood#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "ejs": "^2.3.3",
+    "mongoose": "^4.1.3",
+    "morgan": "~1.6.1"
+  }
+}
