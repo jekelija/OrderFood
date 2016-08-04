@@ -1,0 +1,52 @@
+<!-- for hooking this up to back end nodejs and mongo: http://adrianmejia.com/blog/2014/10/03/mean-stack-tutorial-mongodb-expressjs-angularjs-nodejs/ -->
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/ngDialog.min.css">
+    <link rel="stylesheet" href="css/ngDialog-theme-default.min.css">
+
+    <!-- Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.3/ui-bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/0.7.2/angular-scroll.js"></script>
+    <script src="js/ngDialog.min.js"></script>
+    <title>Order Food From Jon!</title>
+
+</head>
+<body id="page-top" class="index">
+
+<!--by including the app.js here, it will get auto-included in every html page -->
+<script src="js/app.js"></script>    
+<!-- controllers -->
+<script src="js/controllers/viewOrderController.js"></script>
+
+<div style="margin-top: 40px; margin-left: 40px; margin-right:40px;" ng-controller="ViewOrderController">
+    <div class="row">
+        <!--
+        <div class="col-lg-4" style="border-right-style:solid;">
+        <h3>Burgers</h3>
+        </div>
+        <div class="col-lg-4" style="border-right-style:solid;">
+        <h3>Hot Dogs</h3>
+        </div>
+        <div class="col-lg-4">
+        <h3>Chicken Thighs</h3>
+        </div>
+        -->
+        <p>{{time | date:'h:mm:ss a'}}</p>
+        <div ng-repeat="order in orders" style="border-style:solid; margin-bottom:15px; padding-left:20px; padding-right:20px">
+                <h4>{{order.name}}<h4>
+                <p>Notes: {{order.notes}}<p>
+                <pre>{{order.orders}}</pre>
+        </div>
+    </div>
+</div> 
+
+</body>
+</html>

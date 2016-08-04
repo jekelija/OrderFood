@@ -22,6 +22,7 @@ var mongoose = require('mongoose');
 var connection = mongoose.connect(config.database, function(err) {
     if(err) {
         console.log('connection to mongodb error', err);
+        process.exit(1);
     } else {
         console.log('connection to mongodb successful');
     }
