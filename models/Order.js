@@ -9,7 +9,8 @@ var mongoose = require('mongoose');
 var OrderSchema = new mongoose.Schema({
     name: String,
     notes: String,
-    orders: String
+    orders: String,
+    updated_at: { type: Date, default: Date.now }
 });
 
 module.exports = mongoose.model('Order', OrderSchema);

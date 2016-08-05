@@ -1,4 +1,4 @@
-app.controller('ViewOrderController', function($scope, $timeout, Order){
+app.controller('ViewOrderController', function($scope, $timeout, Order, ngDialog){
     
     /*
     $scope.burgers = [];
@@ -21,7 +21,22 @@ app.controller('ViewOrderController', function($scope, $timeout, Order){
             $scope.errors += "\nUnknown type + " order.type;
         }
     }*/
-    $scope.reload = function () {
+    
+    $scope.delete = function(orderId) {
+        Order.remove({id : orderId}, function(data){
+            if(data.success) {
+                $scope.reload();
+            }
+            else {
+                ngDialog.open({
+                    template: '<h4>' + data.message + '</h4>',
+                    plain: true
+                });
+            }
+        });
+    };
+    
+    $scope.reload = function() {
         Order.query(function(data) {
             $scope.orders = data;
             $scope.time = new Date();

@@ -41,9 +41,11 @@
         -->
         <p>{{time | date:'h:mm:ss a'}}</p>
         <div ng-repeat="order in orders" style="border-style:solid; margin-bottom:15px; padding-left:20px; padding-right:20px">
-                <h4>{{order.name}}<h4>
+                <h4>For: {{order.name}}<h4>
                 <p>Notes: {{order.notes}}<p>
+                <p>Ordered at: {{order.updated_at | date:'h:mm:ss a'}}<p>
                 <pre>{{order.orders}}</pre>
+                <button ng-click="delete(order._id)">Order Completed!</button>
         </div>
     </div>
 </div> 
